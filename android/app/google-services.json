@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "35260488507",
+    "firebase_url": "https://exams-d84b4-default-rtdb.firebaseio.com",
+    "project_id": "exams-d84b4",
+    "storage_bucket": "exams-d84b4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:35260488507:android:57b49a40085e4a5974751e",
+        "android_client_info": {
+          "package_name": "com.example.exams_app_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "35260488507-d81ip9rg4uhl39lf0fo53qd9lkfvsg7h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBylQ32MRCetoUN5p1aK_2IA7PtzMfYRTQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "35260488507-d81ip9rg4uhl39lf0fo53qd9lkfvsg7h.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "35260488507-ernm860p0j0g0sj8t2h0vp2jqpu6tnpj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.examsAppFlutter"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
