@@ -11,24 +11,25 @@ class ExamWidget extends StatelessWidget {
   final ExamModel examModel;
 
   const ExamWidget({super.key, required this.examModel});
-  
+
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(AppPadding.p12),
       width: double.infinity,
       decoration: BoxDecoration(
-          color: white,
-          border: Border.all(width: 1, color: greyColor),
-          borderRadius: BorderRadius.circular(12),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey[200]!,
-              spreadRadius: 1,
-              blurRadius: 1,
-              offset: const Offset(0, 1),
-            ),
-          ]),
+        color: white,
+        border: Border.all(width: 1, color: greyColor),
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey[200]!,
+            spreadRadius: 1,
+            blurRadius: 1,
+            offset: const Offset(0, 1),
+          ),
+        ],
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

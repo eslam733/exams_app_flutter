@@ -21,11 +21,16 @@ class FirebaseLoginProvider extends ChangeNotifier {
 
   bool ifLogin() {
     _user = FirebaseAuth.instance.currentUser;
-    if (_user != null) {
-      return true;
-    } else {
+    if(_user == null ||  _user!.providerData[0].providerId == 'google.com') {
       return false;
+    } else {
+      return true;
     }
+    // if (_user != null) {
+    //   return true;
+    // } else {
+    //   return false;
+    // }
   }
 
   Future<bool> login(String email, String password) async {

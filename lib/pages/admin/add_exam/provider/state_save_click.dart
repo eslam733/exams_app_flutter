@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../widgets/loader.dart';
-import '../view/widgets/exam_saved.dart';
+import '../view/widgets/dialogs/exam_saved_diolog.dart';
 import 'add_exam_helper.dart';
 
 class StateSaveClick {

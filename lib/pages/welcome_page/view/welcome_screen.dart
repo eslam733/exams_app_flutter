@@ -7,6 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../helpers/assets_manager.dart';
 import '../../../helpers/colors_data.dart';
 import '../provider/state_admin_click.dart';
+import '../provider/state_student_click.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -45,7 +46,7 @@ class WelcomeScreen extends StatelessWidget {
               height: 20.h,
             ),
             WelcomeOption(
-              onTap: () => StateAdminClick().adminClick(context),
+              onTap: () => StateStudentClick().studentClick(context),
               background: pinkDarkColor,
               color: white,
               icon: ImageAssets.student,

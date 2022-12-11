@@ -12,6 +12,7 @@ import 'pages/splash/provider/splash_helper.dart';
 import 'pages/splash/view/splash_screen.dart';
 import 'pages/welcome_page/view/welcome_screen.dart';
 import 'providers/firebase_login_provider.dart';
+import 'providers/google_provider.dart';
 import 'providers/public_providers.dart';
 
 Future<void> main() async {
@@ -28,6 +29,9 @@ class Exams extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    PublicProviders.googleLoginProvider = Provider.of<GoogleProvider>(
+      context,
+    );
     PublicProviders.firebaseLoginProvider = Provider.of<FirebaseLoginProvider>(
       context,
     );

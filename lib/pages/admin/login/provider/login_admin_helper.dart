@@ -19,8 +19,8 @@ class LoginAdminProvider extends ChangeNotifier {
     if (!keyForm.currentState!.validate()) return;
     final res = await PublicProviders.firebaseLoginProvider
         .login(emailController.text, passwordController.text);
-    // final res = await FirebaseLoginProvider.firebaseLoginProvider
-    //     .login('admin@gmail.com', '12345678@$Xxe');
+    // final res = await  PublicProviders.firebaseLoginProvider
+    //     .login('admin@gmail.com', '123456');
 
     if (res) {
       customPushAndRemoveUntil(context, ExamsScreen());

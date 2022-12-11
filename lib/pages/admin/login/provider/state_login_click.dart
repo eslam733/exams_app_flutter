@@ -1,3 +1,4 @@
+import 'package:exams_app_flutter/widgets/loader.dart';
 import 'package:provider/provider.dart';
 
 import 'login_admin_helper.dart';
@@ -10,6 +11,8 @@ class StateLoginClick {
   }
 
   login(context) {
+    Loaders.startLoading(context);
     loginAdminProvider.login(context);
+    Loaders.endLoading(context);
   }
 }

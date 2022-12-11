@@ -7,6 +7,8 @@ import 'package:exams_app_flutter/pages/welcome_page/view/welcome_screen.dart';
 import 'package:exams_app_flutter/providers/public_providers.dart';
 import 'package:flutter/cupertino.dart';
 
+import '../../student/exams_screen/view/exams_screen.dart';
+
 class SplashProvider extends ChangeNotifier {
   SplashProvider();
 
@@ -15,7 +17,7 @@ class SplashProvider extends ChangeNotifier {
     bool res = false;
     res = await checkLoginFirebase(context);
     res = await checkGoogleLogin(context) || res;
-    print(res);
+
     if (!res) {
       customPushAndRemoveUntil(context, WelcomeScreen());
     }
@@ -32,6 +34,12 @@ class SplashProvider extends ChangeNotifier {
   }
 
   Future<bool> checkGoogleLogin(context) async {
-    return false;
+    final res = await PublicProviders.googleLoginProvider.ifLogin();
+
+    if (res) {
+      customPushAndRemoveUntil(context, ExamsStudentScreen());
+    }
+
+    return res;
   }
 }

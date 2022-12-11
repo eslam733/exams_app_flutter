@@ -1,11 +1,11 @@
-import 'package:flutter/foundation.dart';
 
 class ExamModel {
   String id;
   final String name;
   final List<QuestionModel> questions;
 
-  List<String>? studentList = []; // emails students aready taken this exam
+  List<StudentsModel>? studentList =
+      []; // emails students aready taken this exam
 
   ExamModel({
     required this.name,
@@ -17,7 +17,8 @@ class ExamModel {
   factory ExamModel.fromJson(Map<String, dynamic> json) => ExamModel(
         name: json["name"],
         id: json["id"],
-        studentList: List<String>.from(json["studentList"]).toList(),
+        studentList: List<StudentsModel>.from(
+            json["studentList"].map((e) => StudentsModel.fromJson(e))).toList(),
         questions: List<QuestionModel>.from(
             json['questions'].map((e) => QuestionModel.fromJson(e))).toList(),
       );
@@ -26,7 +27,7 @@ class ExamModel {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['name'] = name;
-    data['studentList'] = [];
+    data['studentList'] = List<dynamic>.from(studentList!.map((e) => e.toJson())).toList();
     data['questions'] =
         List<dynamic>.from(questions.map((e) => e.toJson())).toList();
     return data;
@@ -80,6 +81,27 @@ class AnswerModel {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['answer'] = answer;
+    return data;
+  }
+}
+
+
+// Students are solved exam
+class StudentsModel {
+  final String email;
+  final int degree;
+
+  StudentsModel({required this.degree, required this.email});
+
+  factory StudentsModel.fromJson(Map<String, dynamic> json) => StudentsModel(
+        email: json["email"],
+        degree: json["degree"],
+      );
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['email'] = email;
+    data['degree'] = degree;
     return data;
   }
 }

@@ -5,4 +5,5 @@ class ImageAssets {
   static const logoBackground = '$base/logo_background.png';
   static const admin = '$base/admin.png';
   static const student = '$base/student.png';
+  static const googleLogo = '$base/google_logo.png';
 }
